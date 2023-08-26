@@ -1,6 +1,5 @@
 export CUDA_VISIBLE_DEVICES=0,1,2,3
 premodel=bloomz-7b1-mt
-code_path=run_clm_llm_new.py
 train_data= # train dataset here
 suffix=
 LOG_FILE=${premodel}_$suffix.log
@@ -31,7 +30,7 @@ deepspeed src/run_clm_llm_bloom.py  \
     --per_device_train_batch_size 1 \
     --per_device_eval_batch_size 1 \
     --block_size 512 \
-    --only_optimize_layers "29" "28" "27" "26" "25" "24" "23" "22" "21" "20" "19" "18" "17" "16" "15" "14" "13" "12" "11" "10" "9" "8" "7" "6" "5" "4" "3" "2" "1" "0" \
+    --only_optimize_layers "29" "28" "27" "26" "25" "24" "23" "22" "21" "20" "19" "18" "17" "16" "15" "14" "13" "12" "11" "10" "9" "8" "7" "6"  \
     --selected_layer  "14" "16" "15" \
     --output_dir ${ckpt_dir} \
     --num_train_epochs 1.5 \
